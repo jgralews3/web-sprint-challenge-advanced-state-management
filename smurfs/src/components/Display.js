@@ -9,7 +9,6 @@ const Display = (props) => {
     //   }, []);
 
       console.log("Display Props", props[0])
-      const array = {props}
 
     return (
         <div>
@@ -17,8 +16,8 @@ const Display = (props) => {
                 smurf.map((smurf1) => (
                     <div>
                     <p>Name: {smurf1.name}</p>
-                    <p>Age: {smurf1.age}</p>
-                    <p>Height: {smurf1.height}</p>
+                    {/* <p>Age: {smurf1.age}</p>
+                    <p>Height: {smurf1.height}</p> */}
                 </div>
                 ))
                 

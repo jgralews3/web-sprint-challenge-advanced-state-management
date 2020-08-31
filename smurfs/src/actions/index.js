@@ -10,12 +10,13 @@ export const POSTING_SMURF_SUCCESS = "POSTING_SMURF_SUCCESS"
 export const POSTING_SMURF_ERROR = "POSTING_SMURF_ERROR"
 
 export const newSmurf = (smurf) => (dispatch) => {
+    console.log("new smurf payload: ", smurf)
     dispatch({ type: POSTING_SMURF_START });
     axios
       .post("http://localhost:3333/smurfs", smurf)
       .then((res) => {
-          console.log(res);
-        dispatch({ type: POSTING_SMURF_SUCCESS, payload: res.data[0] });
+          console.log("Posting res: ", res.data);
+        dispatch({ type: POSTING_SMURF_SUCCESS, payload: res.data });
       })
       .catch((err) => {
         dispatch({
@@ -37,8 +38,9 @@ export const getSmurfs = () => (dispatch) => {
       })
       .catch((err) => {
         dispatch({
-          type: FETCHING_SMURF_ERROR,
-          payload: `${err}`
+          type: FETCHING_SMURF_ERROR
+        //   ,
+        //   payload: `${err}`
         });
         console.log(err);
       });

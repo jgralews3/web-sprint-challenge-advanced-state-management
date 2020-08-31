@@ -9,6 +9,7 @@ const Form = (props) => {
 
     const changeHandler = e => {
         setSmurf({...smurf, [e.target.name]: e.target.value})
+        console.log("change", smurf)
     }
 
     return (

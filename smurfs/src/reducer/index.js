@@ -14,7 +14,8 @@ export const reducer = (state = initialState, action) => {
             console.log("payload", action.payload)
             return [...state, action.payload];
         case FETCHING_SMURF_ERROR:
-            return { ...state, error: action.payload, isFetching: false };
+            return state;
+            // return { ...state, error: action.payload, isFetching: false };
 
         case POSTING_SMURF_START:
             return state;
@@ -22,7 +23,8 @@ export const reducer = (state = initialState, action) => {
             console.log("payload", action.payload)
             return [...state, action.payload];
         case POSTING_SMURF_ERROR:
-            return { ...state, error: action.payload, isFetching: false };
+            // return { ...state, error: action.payload, isFetching: false };
+            return state;
 
         default:
             return state;
