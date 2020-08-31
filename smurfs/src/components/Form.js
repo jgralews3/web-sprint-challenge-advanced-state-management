@@ -13,11 +13,12 @@ const Form = (props) => {
 
     return (
         <div>
+            <button onClick={() => {props.getSmurfs()}}>Initiate Smurf Array</button>
+            <div></div>
             <input placeholder="Smurf Name" type="text" name="name" onChange={changeHandler}></input>
             <input placeholder="Smurf Age" type="text" name="age" onChange={changeHandler}></input>
             <input placeholder="Smurf Height" type="text" name="height" onChange={changeHandler}></input>
             <button onClick={() => {props.newSmurf(smurf)}}>Submit New Smurf</button>
-            <button onClick={() => {props.getSmurfs()}}>Get Smurf Array</button>
         </div>
     )
 }

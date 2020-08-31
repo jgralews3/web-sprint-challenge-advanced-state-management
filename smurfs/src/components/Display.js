@@ -4,24 +4,31 @@ import {getSmurfs} from '../actions/index'
 
 const Display = (props) => {
     
-    React.useEffect(() => {
-        getSmurfs();
-      }, [getSmurfs]);
+    // React.useEffect(() => {
+    //     getSmurfs();
+    //   }, []);
 
-      console.log("Props", props.smurf)
+      console.log("Display Props", props[0])
+      const array = {props}
 
     return (
         <div>
-            <p>Name: {props.name}</p>
-            <p>Age: {props.age}</p>
-            <p>Height: {props.height}</p>
+            {props[0].map((smurf)=>(
+                smurf.map((smurf1) => (
+                    <div>
+                    <p>Name: {smurf1.name}</p>
+                    <p>Age: {smurf1.age}</p>
+                    <p>Height: {smurf1.height}</p>
+                </div>
+                ))
+                
+                ))}
         </div>
     )
 }
 
 const mapStateToProps = (state) => {
-    console.log("Display State:", state);
-    return state
+    return [state]
 }
 
 
